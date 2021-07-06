@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Serilog;
 using SeriLogASPNet5.Models;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,13 @@ namespace SeriLogASPNet5.Controllers
             _logger.LogWarning("Warning");
             _logger.LogError("Error");
             _logger.LogCritical("Critical");
+
+            Log.Verbose("Serilog Verbose");
+            Log.Debug("Serilog Debug");
+            Log.Information("Serilog Information");
+            Log.Warning("Serilog Warning");
+            Log.Error("Serilog Error");
+            Log.Fatal("Serilog Fatal");
 
             return View();
         }
